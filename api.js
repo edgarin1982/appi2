@@ -1,7 +1,13 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const user = require('./user.controler')
 const app = express()
 const port = 3000
+
+app.use(express.json())
+mongoose.connect('mongodb+srv://edgarin:260659@cluster1.ms0xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+
+
 
 app.get('/', user.list)
 
